@@ -9,6 +9,7 @@ public class MySqlDatabaseConnection {
 
     private MySqlDatabaseConnection() {
     }
+
     public static Connection getConnection(String url, String user, String pwd) throws ClassNotFoundException, SQLException {
         if(con != null) {
             return con;
