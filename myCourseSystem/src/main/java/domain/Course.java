@@ -102,7 +102,7 @@ public class Course extends BaseEntity {
     public void setEndDate(Date endDate) throws InvalidValueExeption {
         if(endDate != null) {
             if(this.beginDate != null) {
-                if(endDate.before(this.beginDate)) {
+                if(endDate.after(this.beginDate)) {
                     this.endDate = endDate;
                 } else {
                     throw new InvalidValueExeption("Kursende muss nach Kursbeginn sein");
@@ -128,11 +128,10 @@ public class Course extends BaseEntity {
 
     }
 
-
     @Override
     public String toString() {
         return "Course{" +
-                "id=" + super.getId() +
+                "id=" + this.getId() +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", hours=" + hours +

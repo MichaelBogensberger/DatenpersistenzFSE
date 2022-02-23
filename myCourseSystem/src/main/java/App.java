@@ -1,3 +1,4 @@
+import dataaccess.MySqlCourseRepository;
 import dataaccess.MySqlDatabaseConnection;
 import ui.Cli;
 
@@ -8,9 +9,19 @@ public class App {
 
     public static void main(String[] args) {
 
-        Cli myCli = new Cli();
-        myCli.start();
+        Cli myCli = null;
 
+        try {
+            myCli = new Cli(new MySqlCourseRepository());
+            myCli.start();
+        } catch (SQLException e) {
+            System.out.println("Datenbankfehler: " +e.getMessage() + " SQL State: " + e.getSQLState() );
+        } catch (ClassNotFoundException e) {
+            System.out.println("Datenbankfehler: " +e.getMessage() );
+        }
+
+
+        /*
         try {
             Connection myConnection = MySqlDatabaseConnection.getConnection("jdbc:mysql://localhost:3306/kurssystem", "root", "");
             System.out.println("Verbindung aufgebaut");
@@ -19,6 +30,8 @@ public class App {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        */
+
 
     }
 
