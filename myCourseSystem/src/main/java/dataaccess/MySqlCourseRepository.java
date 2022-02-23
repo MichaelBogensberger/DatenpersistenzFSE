@@ -2,6 +2,7 @@ package dataaccess;
 
 import domain.Course;
 import domain.CourseType;
+import util.Assert;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -23,7 +24,34 @@ public class MySqlCourseRepository implements MyCourseRepository {
 
     @Override
     public Optional<Course> getById(Long id) {
-        return Optional.empty();
+        Assert.notNull(id);
+        if(countCoursesInDbWithId(id) == 0) {
+            return Optional.empty();
+        } else {
+            try {
+                String sql = "SELECT * FROM courses WHERE id = ?";
+                PreparedStatement preparedStatement = con.prepareStatement(sql);
+                preparedStatement.setLong(1, id);
+                ResultSet resultSet = preparedStatement.executeQuery();
+                resultSet.next();
+
+                Course course = new Course(
+                        resultSet.getLong("id"),
+                        resultSet.getString("name"),
+                        resultSet.getString("description"),
+                        resultSet.getInt("hours"),
+                        resultSet.getDate("begindate"),
+                        resultSet.getDate("enddate"),
+                        CourseType.valueOf(resultSet.getString("coursetype"))
+                );
+
+                return Optional.of(course);
+
+            } catch (SQLException sqlException) {
+                throw new DatabaseExeption(sqlException.getMessage());
+            }
+
+        }
     }
 
     @Override
@@ -90,6 +118,21 @@ public class MySqlCourseRepository implements MyCourseRepository {
     @Override
     public List<Course> findAllRunningCourses() {
         return null;
+    }
+
+    private int countCoursesInDbWithId(Long id) {
+        try {
+            String countSql = "SELECT COUNT(*) FROM courses WHERE id = ?";
+            PreparedStatement preparedStatementCount = con.prepareStatement(countSql);
+            preparedStatementCount.setLong(1, id);
+            ResultSet resultSetCount = preparedStatementCount.executeQuery();
+            resultSetCount.next();
+            int courseCount = resultSetCount.getInt(1);
+            return courseCount;
+        } catch (SQLException sqlException) {
+            throw new DatabaseExeption(sqlException.getMessage());
+        }
+
     }
 
 

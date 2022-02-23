@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f70ddbae-93fc-4b00-807d-d6bdf64cfe37" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dataaccess/DatabaseExeption.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dataaccess/MySqlCourseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/util/Assert.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Datenpersistenz.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Datenpersistenz.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataaccess/MySqlCourseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataaccess/MySqlCourseRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/Cli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Cli.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/Cli.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/Cli.class" afterDir="false" />
     </list>
@@ -82,7 +79,7 @@
       <workItem from="1645196393524" duration="2294000" />
       <workItem from="1645285593675" duration="224000" />
       <workItem from="1645550277081" duration="3107000" />
-      <workItem from="1645607450199" duration="4667000" />
+      <workItem from="1645607450199" duration="7760000" />
     </task>
     <servers />
   </component>
