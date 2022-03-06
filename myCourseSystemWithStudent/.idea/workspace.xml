@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f70ddbae-93fc-4b00-807d-d6bdf64cfe37" name="Changes" comment="fixed bug">
-      <change beforePath="$PROJECT_DIR$/../Datenpersistenz.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Datenpersistenz.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f70ddbae-93fc-4b00-807d-d6bdf64cfe37" name="Changes" comment="fixed bug" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,7 +78,7 @@
       <workItem from="1646225249676" duration="1250000" />
       <workItem from="1646402160526" duration="325000" />
       <workItem from="1646573470059" duration="3731000" />
-      <workItem from="1646577683973" duration="1223000" />
+      <workItem from="1646577683973" duration="2032000" />
     </task>
     <task id="LOCAL-00001" summary="finished task 4">
       <created>1646577052504</created>
