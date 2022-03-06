@@ -15,24 +15,25 @@ Nun fügen wir die MySql Connector Dependency hinzu. Diese wird benötigt, um mi
 
 
 
-![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.002.png)
+![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.002.png)  
 # Verbindung zu Datenbank herstellen
 
-![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.004.png)In folgendem Codeabschnitt wird dargestellt wie man mithilfe der MySql Connector Dependency eine Verbindung zur Datenbank herstellen kann.
+![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.004.png)  
+In folgendem Codeabschnitt wird dargestellt wie man mithilfe der MySql Connector Dependency eine Verbindung zur Datenbank herstellen kann.
 
 # Einfaches CRUD Beispiel mit JDBC
 Nun war es die Aufgabe mithilfe der Videos ein einfaches CRUD Programm mithilfe von JDBC zu gestalten. Dabei geht es im Wesentlichen um das Auslesen von Studenten, dem einfügen von Studenten sowie dem löschen von Studenten. Der Code zum Beispiel ist hier zu finden: [jdbcCrudExample](https://github.com/MichaelBogensberger/DatenpersistenzFSE).
 
 
 
-![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.006.png)
+![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.006.png)  
 Hier ist der Aufbau der Student Tabelle zu sehen:
 
 
 
 
 ## CRUD Beispiel erweitern
-![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.008.png)
+![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.008.png)  
 Als nächstes sollten wir das vorherige Beispiel um eine weitere Tabelle ergänzen und dieses in Java implementieren. Dazu habe ich der Datenbank eine Kurs-Tabelle hinzugefügt. Jeder Student hat mehrere Kurse. Jeder Kurs hat zudem mehrere Studenten. Der Code ist im Gleichen GitHub Repository zu finden wie in der vorherigen Aufgabe.
 
 
@@ -60,7 +61,7 @@ DAO ist ein Entwurfsmuster das einem ermöglicht den Zugriff auf Daten so zu kap
 
 Wie wir sehen können bringt uns also DAO den großen Vorteil der geringen Kopplung. Dies ist auch nochmal in folgender Grafik veranschaulicht.
 
-![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.012.png)
+![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.012.png)  
 
 
 ## Singleton Pattern
@@ -70,8 +71,8 @@ Dabei erstellen wir die MySqlDatabaseConnection Klasse. Diese liefert die Connec
 
 
 
-![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.014.png)
-![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.016.png)
+![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.014.png)  
+![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.016.png)  
 
 
 ## Cli Klasse
@@ -93,7 +94,7 @@ Nun erstellen wir uns ein Domain Package und darin die Entitäten als Klassen. Z
 ` `Nun schaut unser Package folgendermaßen aus:
 
 
-![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.020.png)
+![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.020.png)  
 
 
 
@@ -106,7 +107,7 @@ Nun erstellen wir uns ein BaseRepository. Dieses kann ich nun für jede Art von 
 
 
 
-![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.022.png)
+![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.022.png)  
 
 
 
@@ -123,7 +124,7 @@ Nun erstellen wir uns ein BaseRepository. Dieses kann ich nun für jede Art von 
 ## MyCourseRepository Repository
 Nun erstellen wir ein CourseRepository. Dieses erbt das BaseRepository. Dabei wird dieses mit Course und Long getypt. Course als Entitytyp und Long als Schlüsseltyp. Der Vorteil ist, dass ich das BaseRepository immer verwenden kann und jetzt zb im CourseRepository zusätzlich Funktionen spezifizieren.
 
-![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.024.png)
+![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.024.png)  
 
 
 
@@ -141,7 +142,7 @@ Dazu erstellen wir uns zunächst eine Connection. Da wir ja die MySqlDatabaseCon
 ![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.028.png)  
 Nun fangen wir an die getAll() Methode mit Funktionalität zu befüllen. In der while Schleife befüllen wir nun die ArrayList mit den jeweiligen Werten. Hier sollte man genau auf die Labels achten! Nun haben wir ja eine Enumeration für den Kurstypen (CourseType). Wir bekommen jedoch einen String aus der DB zurück. Deshalb müssen wir hier den String noch in einen CourseType konvertieren. Diese sieht nun wie folgt aus:
 
-![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.029.png)
+![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.029.png)  
 Nun gehen wir in die Cli Klasse und fügen im Konstruktor ein MyCourseRepository hinzu. Danach fügen wir im Switch Case im zweiten Case die Methode showAllCourses hinzu. Diese müssen wir natürlich noch implementieren.
 
 
@@ -171,7 +172,7 @@ Schließlich können wir in die App Klasse bzw. Main Methode wechseln. Hier erst
 
 Das Zusammenspiel mit den Repositories wird in folgender Grafik nochmal genauer dargestellt. Hier ist gut zu sehen welche Klasse welche Repositories verwendet. Zurzeit verwendet die Cli nur das MyCourseRepository. Das kann sich jedoch mit zusätzlicher Funktionalität ändern. 
 
-![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.036.png)
+![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.036.png)  
 
 
 
@@ -185,7 +186,7 @@ Das Zusammenspiel mit den Repositories wird in folgender Grafik nochmal genauer 
 ## Assert Klasse
 Nun erstellen wir uns ein util Package. Darin erstellen wir uns eine Assert Klasse. Diese dient dazu zu checken ob ein Objekt null ist oder nicht. 
 
-![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.038.png)
+![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.038.png)  
 
 
 
@@ -213,7 +214,8 @@ Nun programmieren wir die Funktionalität der getById Methode.
 ![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.042.png)  
 Nun programmieren wir die insert Methode.  Wie wir sehen ähnelt diese Methode ebenfalls den anderen. Wichtig ist hier jedoch, dass wir oben beim preparedStatement noch sagen, dass wir die generierten Keys zurückbekommen wollen. Unten erstellen wir uns dann ein ResultSet mit den generierten Schlüsseln. Wenn nun ein Key im ResultSet existiert, rufen wir die getById Methode auf und übergeben als ID die erste Stelle vom ResultSet, da wir ja nur einen Datensatz einfügen können wir das gleich schon so definieren.
 ## Cli anpassen (insert Methode)
-![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.044.png)Nun passen wir noch die Cli Klasse an. Wichtig ist hier, dass wir alle Werte einlesen und alle Fehlerprüfungen durchführen. Danach legen wir einen neuen Kurs (course Objekt) mit den eingegebenen Daten an und übergeben diesen der insert Methode. Wenn das Optional infolgedessen nicht leer ist, geben wir den Kurs aus.
+![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.044.png)  
+Nun passen wir noch die Cli Klasse an. Wichtig ist hier, dass wir alle Werte einlesen und alle Fehlerprüfungen durchführen. Danach legen wir einen neuen Kurs (course Objekt) mit den eingegebenen Daten an und übergeben diesen der insert Methode. Wenn das Optional infolgedessen nicht leer ist, geben wir den Kurs aus.
 
 
 
@@ -239,7 +241,7 @@ Natürlich müssen wir nun wieder die Cli Klasse anpassen. Wichtig ist hier, das
 Danach geben wir den gefunden Kurs aus und lesen die restlichen Werte ein. Wir sagen aber, dass wenn man für zb die Beschreibung nicht eingibt (nur Enter drückt) nichts geändert werden soll.
 
 
-![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.048.png)
+![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.048.png)  
 ![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.050.png)  
 Nun rufen wir die update Methode auf. Hier können wir auf jeden Fall mal die ID übergeben. Nun sagen wir, wenn zb der übergebene Name leer ist, dann füllen wir hier einfach den Namen vom bereits gefundenen Kurs ein. Andernfalls übergeben wir den eingebenden Namen.
 
@@ -316,7 +318,7 @@ Als nächstes implementieren wir die findAllRunningCourses Methode. Diese ähnel
 
 Für das Domain Package ergibt sich folgendes UML Diagramm:   
 
-![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.063.png)
+![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.063.png)  
 
 
 
@@ -365,7 +367,7 @@ In folgender Abbildung wäre eine Mögliche Version der Implementierung als ER-M
 
 Ein dazugehöriges UML Diagramm könnte dann folgendermaßen aussehen:
 
-![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.068.png)
+![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.068.png)  
 ## Alle laufende Kurse finden
 
 # ResultSet.next() Hinweis
