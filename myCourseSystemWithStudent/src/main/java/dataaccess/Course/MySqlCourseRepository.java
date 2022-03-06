@@ -5,8 +5,8 @@ import dataaccess.MySqlDatabaseConnection;
 import domain.Course.Course;
 import domain.Course.CourseType;
 import util.Assert;
-import util.DbConfig;
-import util.DbFunctions;
+import util.MySqlDbConfig;
+import util.MySqlDbFunctions;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ public class MySqlCourseRepository implements MyCourseRepository {
 
     public MySqlCourseRepository() throws SQLException, ClassNotFoundException {
         //this.con = MySqlDatabaseConnection.getConnection("jdbc:mysql://localhost:3306/kurssystem", "root", "");
-        this.con = MySqlDatabaseConnection.getConnection(DbConfig.getUrl(), DbConfig.getUser(), DbConfig.getPwd());
+        this.con = MySqlDatabaseConnection.getConnection(MySqlDbConfig.getUrl(), MySqlDbConfig.getUser(), MySqlDbConfig.getPwd());
     }
 
     @Override
@@ -58,7 +58,7 @@ public class MySqlCourseRepository implements MyCourseRepository {
     @Override
     public Optional<Course> getById(Long id) {
         Assert.notNull(id);
-        if(DbFunctions.countCoursesInDbWithId(id, con) == 0) {
+        if(MySqlDbFunctions.countCoursesInDbWithId(id, con) == 0) {
             return Optional.empty();
         } else {
             try {
@@ -118,7 +118,7 @@ public class MySqlCourseRepository implements MyCourseRepository {
         Assert.notNull(entity);
         String sql = "UPDATE `courses` SET `name` = ?, `description` = ?, `hours` = ?, `begindate` = ?, `enddate` = ?, `coursetype` = ? WHERE `courses`.`id` = ?";
 
-        if(DbFunctions.countCoursesInDbWithId(entity.getId(), con) == 0) {
+        if(MySqlDbFunctions.countCoursesInDbWithId(entity.getId(), con) == 0) {
             return Optional.empty();
         }
 
@@ -153,7 +153,7 @@ public class MySqlCourseRepository implements MyCourseRepository {
 
         try {
 
-            if(DbFunctions.countCoursesInDbWithId(id, con) == 1) {
+            if(MySqlDbFunctions.countCoursesInDbWithId(id, con) == 1) {
                 PreparedStatement preparedStatement = con.prepareStatement(sql);
                 preparedStatement.setLong(1, id);
                 preparedStatement.executeUpdate();

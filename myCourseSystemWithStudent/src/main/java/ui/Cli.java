@@ -55,17 +55,25 @@ public class Cli {
                     runningCourses();
                     break;
                 case "8":
+                    addStudent();
                     break;
                 case "9":
+                    showAllStudents();
                     break;
                 case "10":
                     showStudentDetails();
                     break;
                 case "11":
+                    deleteStudent();
                     break;
                 case "12":
+                    studentSearch();
                     break;
                 case "13":
+                    findStudentByBirthDate();
+                    break;
+                case "14":
+                    findStudentBetweenDates();
                     break;
                 case "x":
                     System.out.println("beenden");
@@ -79,6 +87,146 @@ public class Cli {
         scan.close();
 
 
+    }
+
+    private void findStudentBetweenDates() {
+        System.out.println("Geben Sie bitte ein Start-Datum ein (YYYY-MM-DD):");
+        Date beginDate = Date.valueOf(scan.nextLine());
+
+        System.out.println("Geben Sie bitte ein End-Datum ein (YYYY-MM-DD)");
+        Date endDate = Date.valueOf(scan.nextLine());
+
+        List<Student> studentList;
+
+        try {
+            studentList = studentRepo.findAllWithBirthDatesBetween(beginDate,endDate);
+
+            for (Student student: studentList) {
+                System.out.println(student);
+            }
+
+
+        } catch (DatabaseExeption databaseExeption) {
+            System.out.println("DatenbankFehler bei Studentensuche: " +databaseExeption.getMessage());
+        } catch (Exception e) {
+            System.out.println("Unbekannter Fehler: " + e.getMessage());
+        }
+
+    }
+
+    private void findStudentByBirthDate() {
+        System.out.println("Bitte geben Sie ein Datum ein (YYYY-MM-DD):");
+        Date searchDate = Date.valueOf(scan.nextLine());
+        List<Student> studentList;
+
+        try {
+            studentList = studentRepo.findAllByBirthDate(searchDate);
+
+            for (Student student: studentList) {
+                System.out.println(student);
+            }
+
+
+        } catch (DatabaseExeption databaseExeption) {
+            System.out.println("DatenbankFehler bei Studentensuche: " +databaseExeption.getMessage());
+        } catch (Exception e) {
+            System.out.println("Unbekannter Fehler: " + e.getMessage());
+        }
+
+    }
+
+    private void studentSearch() {
+        System.out.println("Geben Sie einen Suchbegriff ein:");
+        String searchString = scan.nextLine();
+        List<Student> studentList;
+
+        try {
+            studentList = studentRepo.findAllByFirstnameOrLastname(searchString);
+
+            for(Student student : studentList) {
+                System.out.println(student);
+            }
+
+        } catch (DatabaseExeption databaseExeption) {
+            System.out.println("DatenbankFehler bei Studentensuche: " +databaseExeption.getMessage());
+        } catch (Exception e) {
+            System.out.println("Unbekannter Fehler: " + e.getMessage());
+        }
+    }
+
+    private void addStudent() {
+        String firstname, lastname;
+        Date birthDate;
+
+
+        try {
+            System.out.println("Geben Sie nun bitte folgende Daten ein:");
+
+            System.out.println("Vorname:");
+            firstname = scan.nextLine();
+            if(firstname.equals("")) {throw new IllegalArgumentException("Argument darf nicht leer sein!");}
+
+            System.out.println("Nachname:");
+            lastname = scan.nextLine();
+            if(lastname.equals("")) {throw new IllegalArgumentException("Argument darf nicht leer sein!");}
+
+            System.out.println("Geburtsdatum (YYYY-MM-DD):");
+            birthDate = Date.valueOf(scan.nextLine());
+
+
+            Optional<Student> optionalStudent = studentRepo.insert(
+                    new Student(firstname,lastname,birthDate)
+            );
+
+            if(optionalStudent.isPresent()) {
+                System.out.println("Student angelegt: " +optionalStudent.get());
+            } else {
+                System.out.println("Student konnte nicht angelegt werden!");
+            }
+
+        } catch (IllegalArgumentException illegalArgumentException) {
+            System.out.println("Eingabefahler: " + illegalArgumentException.getMessage());
+        } catch (InvalidValueExeption invalidValueExeption) {
+            System.out.println("Studentendaten nicht korrekt angegeben: " + invalidValueExeption.getMessage());
+        } catch (DatabaseExeption databaseExeption) {
+            System.out.println("Datenbankfehler beim einfügen: " + databaseExeption.getMessage());
+        } catch (Exception e) {
+            System.out.println("Unbekannter Fehler: " + e.getMessage());
+        }
+    }
+
+    private void deleteStudent() {
+        System.out.println("Welchen Studenten möchten Sie löschen? Bitte ID eingeben:");
+        Long studentIdToDelete = Long.parseLong(scan.nextLine());
+
+        try {
+            studentRepo.deleteByID(studentIdToDelete);
+            System.out.println("Student mit ID " + studentIdToDelete + " gelöscht");
+
+        } catch (DatabaseExeption databaseExeption) {
+            System.out.println("Datenbankfehler beim löschen: " + databaseExeption.getMessage());
+        }
+        catch (Exception e) {
+            System.out.println("Unbekannter Fehler beim löschen: " + e.getMessage());
+        }
+    }
+
+    private void showAllStudents() {
+        List<Student> list = null;
+        try {
+            list = studentRepo.getAll();
+            if (list.size() > 0) {
+                for (Student student : list) {
+                    System.out.println(student);
+                }
+            } else {
+                System.out.println("Studententabelle leer!");
+            }
+        } catch (DatabaseExeption databaseExeption) {
+            System.out.println("Datenbankfehler bei Anzeige aller Studenten: " + databaseExeption.getMessage());
+        } catch (Exception exception) {
+            System.out.println("Unbekannter Fehler bei anzeige aller Studenten: " +exception.getMessage());
+        }
     }
 
     private void showStudentDetails() {
@@ -314,8 +462,8 @@ public class Cli {
     private void showMenue() {
         System.out.println("--------------------- KURSMANAGEMENT ---------------------");
         System.out.println("(1) Kurs eingeben \t (2) Alle Kurse anzeigen \t (3) Kursdetails anzeigen \t (4) Kursdetails ändern \t (5) Kurs löschen \t (6) Kurs suchen \t (7) Laufende Kurse anzeigen");
-        System.out.println("(8) Student eingeben \t (9) Alle Studenten anzeigen \t (10) Studentendetails anzeigen \t (11) Student löschen \t (11) Studenten suchen (VN, NN)");
-        System.out.println("(12) Studenten mit Geburtsdatum finden \t (13) Studenten mit Geburtsdatum zwischen finden \t (x) Ende");
+        System.out.println("(8) Student eingeben \t (9) Alle Studenten anzeigen \t (10) Studentendetails anzeigen \t (11) Student löschen \t (12) Studenten suchen (VN, NN)");
+        System.out.println("(13) Studenten mit Geburtsdatum finden \t (14) Studenten mit Geburtsdatum zwischen finden \t (x) Ende");
     }
 
 

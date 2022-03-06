@@ -5,25 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f70ddbae-93fc-4b00-807d-d6bdf64cfe37" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../myCourseSystem/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../myCourseSystem/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myCourseSystem/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../myCourseSystem/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myCourseSystem/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../myCourseSystem/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myCourseSystem/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myCourseSystem/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../myCourseSystem/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myCourseSystem/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../myCourseSystem/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myCourseSystem/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../myCourseSystem/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myCourseSystem/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myCourseSystem/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myCourseSystem/src/main/java/dataaccess/BaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myCourseSystem/src/main/java/dataaccess/BaseRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myCourseSystem/src/main/java/dataaccess/DatabaseExeption.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myCourseSystem/src/main/java/dataaccess/DatabaseExeption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myCourseSystem/src/main/java/dataaccess/MyCourseRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myCourseSystem/src/main/java/dataaccess/MySqlCourseRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myCourseSystem/src/main/java/dataaccess/MySqlDatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myCourseSystem/src/main/java/dataaccess/MySqlDatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myCourseSystem/src/main/java/domain/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myCourseSystem/src/main/java/domain/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myCourseSystem/src/main/java/domain/Course.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myCourseSystem/src/main/java/domain/CourseType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myCourseSystem/src/main/java/domain/InvalidValueExeption.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myCourseSystem/src/main/java/domain/InvalidValueExeption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myCourseSystem/src/main/java/ui/Cli.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myCourseSystem/src/main/java/ui/Cli.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../myCourseSystem/src/main/java/util/Assert.java" beforeDir="false" afterPath="$PROJECT_DIR$/../myCourseSystem/src/main/java/util/Assert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataaccess/Course/MySqlCourseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataaccess/Course/MySqlCourseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataaccess/Student/MySqlStudentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataaccess/Student/MySqlStudentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Student/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Student/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Cli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Cli.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/DbConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/MySqlDbConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/DbFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/MySqlDbFunctions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dataaccess/Student/MySqlStudentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataaccess/Student/MySqlStudentRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ui/Cli.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/Cli.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/util/DbConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/util/DbFunctions.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +87,9 @@
       <workItem from="1645285593675" duration="224000" />
       <workItem from="1645550277081" duration="3107000" />
       <workItem from="1645607450199" duration="7760000" />
-      <workItem from="1646225249676" duration="626000" />
+      <workItem from="1646225249676" duration="1250000" />
+      <workItem from="1646402160526" duration="325000" />
+      <workItem from="1646573470059" duration="3506000" />
     </task>
     <servers />
   </component>

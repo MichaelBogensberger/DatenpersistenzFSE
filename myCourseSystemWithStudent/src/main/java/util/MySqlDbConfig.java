@@ -1,6 +1,6 @@
 package util;
 
-public class DbConfig {
+public class MySqlDbConfig {
     private static String url = "jdbc:mysql://localhost:3306/kurssystem";
     private static String user = "root";
     private static String pwd = "";

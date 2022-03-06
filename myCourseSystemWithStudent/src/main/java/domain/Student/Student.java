@@ -20,7 +20,7 @@ public class Student extends BaseEntity {
         this.setBirthDate(birthDate);
     }
 
-    public Student(String name, String firstname, String lastname, Date birthDate)
+    public Student(String firstname, String lastname, Date birthDate)
             throws InvalidValueExeption {
         super(null);
         this.setFirstname(firstname);
