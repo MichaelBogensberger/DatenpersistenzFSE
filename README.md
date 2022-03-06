@@ -1,9 +1,8 @@
-﻿
-<br><br><br>
+<br><br>
 <h1 align="center">Übungszettel – Datenpersistenz </h1>
 <h1 align="center">Name: Michael Bogensberger</h1>
 <h1 align="center">Datum: 02.02.2022</h1>
-<br><br><br><br><br><br><br><br>
+<br><br><br><br><br>
 
 
 
@@ -45,8 +44,8 @@ Als nächstes sollten wir das vorherige Beispiel um eine weitere Tabelle ergänz
 # JDBC-Zugriff mit dem DAO Entwurfsmuster
 Die nächste Aufgabe war es, sich mithilfe der Videos sich mit dem DAO Entwurfsmuster vertraut zu machen. Der Code zur folgenden Aufgabe ist hier zu finden: [GitHub Repo](https://github.com/MichaelBogensberger/DatenpersistenzFSE)
 ## DAO – Data Access Object
-DAO ist ein Entwurfsmuster das einem ermöglicht den Zugriff auf Daten so zu kapseln, das jene Datenquelle relativ einfach getauscht werden kann. Dadurch wird die Programmlogik von technischen Details der Datenspeicherung befreit. Man will also nicht den bestehenden Code angreifen müssen, um Funktionalität hinzufügen zu können. DAO wird also zwischen der Datenbank und dem Code geschalten. Dadurch wird die Kopplung auf ein Minimum heruntergefahren. Wenn sich der JDBC Treiber zum Beispiel ändert, ist der grundsätzliche Code unabhängig. Das entkoppeln ist das zentrale des DAO Design Patterns.
-![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.010.png)
+DAO ist ein Entwurfsmuster das einem ermöglicht den Zugriff auf Daten so zu kapseln, das jene Datenquelle relativ einfach getauscht werden kann. Dadurch wird die Programmlogik von technischen Details der Datenspeicherung befreit. Man will also nicht den bestehenden Code angreifen müssen, um Funktionalität hinzufügen zu können. DAO wird also zwischen der Datenbank und dem Code geschalten. Dadurch wird die Kopplung auf ein Minimum heruntergefahren. Wenn sich der JDBC Treiber zum Beispiel ändert, ist der grundsätzliche Code unabhängig. Das entkoppeln ist das zentrale des DAO Design Patterns.    
+![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.010.png)  
 
 
 
