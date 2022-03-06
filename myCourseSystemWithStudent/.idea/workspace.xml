@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f70ddbae-93fc-4b00-807d-d6bdf64cfe37" name="Changes" comment="">
+    <list default="true" id="f70ddbae-93fc-4b00-807d-d6bdf64cfe37" name="Changes" comment="fixed bug">
+      <change beforePath="$PROJECT_DIR$/../Datenpersistenz.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Datenpersistenz.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataaccess/Course/MySqlCourseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataaccess/Course/MySqlCourseRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dataaccess/Student/MySqlStudentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataaccess/Student/MySqlStudentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/Student/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/Student/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Cli.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Cli.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/DbConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/MySqlDbConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/DbFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/MySqlDbFunctions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dataaccess/Student/MySqlStudentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dataaccess/Student/MySqlStudentRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ui/Cli.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/Cli.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/util/DbConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/util/DbFunctions.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,8 +80,24 @@
       <workItem from="1645607450199" duration="7760000" />
       <workItem from="1646225249676" duration="1250000" />
       <workItem from="1646402160526" duration="325000" />
-      <workItem from="1646573470059" duration="3506000" />
+      <workItem from="1646573470059" duration="3731000" />
+      <workItem from="1646577683973" duration="1223000" />
     </task>
+    <task id="LOCAL-00001" summary="finished task 4">
+      <created>1646577052504</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1646577052504</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fixed bug">
+      <created>1646577184899</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1646577184899</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,5 +113,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="finished task 4" />
+    <MESSAGE value="fixed bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bug" />
   </component>
 </project>
