@@ -149,8 +149,6 @@ Nun gehen wir in die Cli Klasse und fügen im Konstruktor ein MyCourseRepository
 
 
 
-![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.030.png)
-
 1. ## showAllCourses Methode
 ![](documentation/Aspose.Words.ae308014-9207-45a4-afc7-a11af8ac9b9e.031.png)  
 Nun können wir die showAllCourses Methode implementieren. Dazu erstellen wir zunächst eine List vom Typ Course. Danach befüllen wir die Liste über das Repository mit getAll(). Nun checken wir ob die liste leer ist. Ist sie es nicht, gehen wir durch die jeweiligen Kurse in der Liste durch und geben diese aus. Dazu haben wir ja auch die toString Methode implementiert. Jene wird nun im „sout“ verwendet. Danach umgeben wir das ganze noch mit einem try catch und sagen was passiert wenn Fehler auftreten. 
